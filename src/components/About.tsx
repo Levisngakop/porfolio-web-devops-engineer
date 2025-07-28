@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -19,14 +18,11 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Animated and larger profile image */}
-          <motion.img
+          {/* Profile image (non-animated now) */}
+          <img
             src="/profile.jpg"
             alt="Levis Ngakop"
             className="w-56 h-56 rounded-full mx-auto mb-6 border-4 border-indigo-600 shadow-lg"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
           />
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-pulse">
