@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="mailto:levis.ngakop@example.com"
+                href="mailto:levisngakop47@gmail.com"
                 className="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
               >
                 <Mail size={20} />
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
           
           <div className="flex items-center space-x-4">
             <p className="text-slate-400">
-              © 2024 Levis Ngakop. All rights reserved.
+              © 2025 Levis Ngakop. All rights reserved.
             </p>
             <button
               onClick={scrollToTop}
