@@ -7,7 +7,7 @@ const Blog: React.FC = () => {
       id: 1,
       title: 'Project Kuiper: What It Means for Africa\'s Cloud Future',
       excerpt: 'Exploring how Amazon\'s Project Kuiper satellite constellation could revolutionize cloud connectivity across Africa, bridging the digital divide and enabling new possibilities for cloud-native applications.',
-      date: '2024-01-15',
+      date: '2025-07-30',
       readTime: '8 min read',
       tags: ['AWS', 'Africa', 'Satellite', 'Cloud'],
       platform: 'Medium',
@@ -127,7 +127,7 @@ const Blog: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://medium.com/@levis"
+                href="https://medium.com/@levisngakop47"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-purple-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
