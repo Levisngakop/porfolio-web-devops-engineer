@@ -1,67 +1,107 @@
 import React from 'react';
-import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { User, Award, Clock, Target } from 'lucide-react';
 
-const Hero: React.FC = () => {
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+const About: React.FC = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 relative">
-      {/* DevOps Logo in top-right */}
-      <img
-        src="/devops-logo.jpg"
-        alt="DevOps Logo"
-        className="fixed top-4 right-4 w-12 h-12 opacity-70 hover:opacity-100 transition-opacity cursor-pointer"
-        title="DevOps Engineer"
-      />
-
-      <div className="container mx-auto text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Profile image (non-animated now) */}
-          <img
-            src="/profile.jpg"
-            alt="Levis Ngakop"
-            className="w-56 h-56 rounded-full mx-auto mb-6 border-4 border-indigo-600 shadow-lg"
-          />
-
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-pulse">
-            Levis Ngakop
-          </h1>
-          <h2 className="text-2xl md:text-3xl text-slate-300 mb-8 font-light">
-            Cloud Native DevOps Engineer
+    <section id="about" className="py-20 px-6 bg-slate-800">
+      <div className="container mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            About Me
           </h2>
-          <p className="text-xl md:text-2xl text-blue-400 mb-8 font-medium">
-            Empowering Systems. Enabling People.
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+            A journey from humble beginnings to building enterprise-grade cloud infrastructure
           </p>
-          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            I'm a DevOps Engineer passionate about automation, infrastructure, and inspiring growth.
-            With 5+ years of experience building resilient cloud-native solutions.
-          </p>
+        </div>
 
-          <div className="flex justify-center space-x-6 mb-12">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="mailto:levis@example.com"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors"
-            >
-              <Mail size={24} />
-            </a>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6">
+            <div className="bg-slate-700 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <User className="text-blue-400 mr-3" size={24} />
+                <h3 className="text-xl font-semibold">The Beginning</h3>
+              </div>
+              <p className="text-slate-300 leading-relaxed">
+                My journey started with a curiosity about how systems work at scale. From my first
+                encounter with Linux servers to deploying my first application, I knew I wanted to
+                be part of the infrastructure that powers the digital world.
+              </p>
+            </div>
+
+            <div className="bg-slate-700 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <Target className="text-green-400 mr-3" size={24} />
+                <h3 className="text-xl font-semibold">The Growth</h3>
+              </div>
+              <p className="text-slate-300 leading-relaxed">
+                Over 5+ years, I've evolved from managing single servers to orchestrating
+                complex Kubernetes clusters, designing production-grade AWS VPCs, and building
+                CI/CD pipelines that deploy thousands of times per day.
+              </p>
+            </div>
+
+            <div className="bg-slate-700 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <Award className="text-purple-400 mr-3" size={24} />
+                <h3 className="text-xl font-semibold">The Impact</h3>
+              </div>
+              <p className="text-slate-300 leading-relaxed">
+                Today, I focus on empowering teams through automation, building resilient
+                infrastructure, and sharing knowledge. My goal is to make complex systems
+                simple and reliable, enabling others to focus on what they do best.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-lg text-center">
+              <img
+                src="/profile.jpg"
+                alt="Levis Ngakop"
+                title="Levis Ngakop - Cloud Native DevOps Engineer"
+                className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-indigo-500 shadow-lg"
+              />
+              <h3 className="text-2xl font-bold mb-2">Levis Ngakop</h3>
+              <p className="text-blue-100 mb-4">Cloud Native DevOps Engineer</p>
+              <div className="flex justify-center space-x-6 text-sm">
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <Clock className="mr-2" size={16} />
+                  </div>
+                  <p>5+ Years</p>
+                  <p className="text-blue-200">Experience</p>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <Award className="mr-2" size={16} />
+                  </div>
+                  <p>3+</p>
+                  <p className="text-blue-200">Certifications</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-700 p-6 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4">Core Values</h3>
+              <ul className="space-y-3 text-slate-300">
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                  Automation over manual processes
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                  Security by design, not as an afterthought
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                  Continuous learning and knowledge sharing
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                  Reliability and resilience in every solution
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -69,5 +109,5 @@ const Hero: React.FC = () => {
   );
 };
 
-export default Hero;
+export default About;
 
