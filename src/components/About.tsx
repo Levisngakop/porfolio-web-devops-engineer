@@ -22,8 +22,8 @@ const About: React.FC = () => {
                 <h3 className="text-xl font-semibold">The Beginning</h3>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                My journey started with a curiosity about how systems work at scale. From my first 
-                encounter with Linux servers to deploying my first application, I knew I wanted to 
+                My journey started with a curiosity about how systems work at scale. From my first
+                encounter with Linux servers to deploying my first application, I knew I wanted to
                 be part of the infrastructure that powers the digital world.
               </p>
             </div>
@@ -34,8 +34,8 @@ const About: React.FC = () => {
                 <h3 className="text-xl font-semibold">The Growth</h3>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                Over 5+ years, I've evolved from managing single servers to orchestrating 
-                complex Kubernetes clusters, designing production-grade AWS VPCs, and building 
+                Over 5+ years, I've evolved from managing single servers to orchestrating
+                complex Kubernetes clusters, designing production-grade AWS VPCs, and building
                 CI/CD pipelines that deploy thousands of times per day.
               </p>
             </div>
@@ -46,8 +46,8 @@ const About: React.FC = () => {
                 <h3 className="text-xl font-semibold">The Impact</h3>
               </div>
               <p className="text-slate-300 leading-relaxed">
-                Today, I focus on empowering teams through automation, building resilient 
-                infrastructure, and sharing knowledge. My goal is to make complex systems 
+                Today, I focus on empowering teams through automation, building resilient
+                infrastructure, and sharing knowledge. My goal is to make complex systems
                 simple and reliable, enabling others to focus on what they do best.
               </p>
             </div>
@@ -55,9 +55,12 @@ const About: React.FC = () => {
 
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-lg text-center">
-              <div className="w-32 h-32 bg-slate-300 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <User size={64} className="text-slate-600" />
-              </div>
+              <img
+                src="/profile.jpg"
+                alt="Levis Ngakop"
+                title="Levis Ngakop - Cloud Native DevOps Engineer"
+                className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-indigo-500 shadow-lg"
+              />
               <h3 className="text-2xl font-bold mb-2">Levis Ngakop</h3>
               <p className="text-blue-100 mb-4">Cloud Native DevOps Engineer</p>
               <div className="flex justify-center space-x-6 text-sm">
@@ -107,3 +110,4 @@ const About: React.FC = () => {
 };
 
 export default About;
+
