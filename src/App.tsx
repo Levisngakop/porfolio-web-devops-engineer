@@ -1,4 +1,3 @@
-import Testimonials from './components/Testimonials';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -7,6 +6,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import Blog from './components/Blog';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -15,7 +15,16 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'skills', 'certifications', 'blog', 'testimonials', 'contact'];
+      const sections = [
+        'home',
+        'about',
+        'projects',
+        'skills',
+        'certifications',
+        'blog',
+        'testimonials',
+        'contact',
+      ];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -23,8 +32,11 @@ function App() {
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetHeight = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
             setActiveSection(section);
             break;
           }
@@ -46,7 +58,7 @@ function App() {
         <Skills />
         <Certifications />
         <Blog />
-	<Testimonials />
+        <Testimonials /> {/* ✅ Make sure this component has id="testimonials" */}
         <Contact />
       </main>
       <Footer />
@@ -55,3 +67,4 @@ function App() {
 }
 
 export default App;
+
