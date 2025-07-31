@@ -1,3 +1,4 @@
+import Testimonials from './components/Testimonials';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -45,6 +46,7 @@ function App() {
         <Skills />
         <Certifications />
         <Blog />
+	<Testimonials />
         <Contact />
       </main>
       <Footer />
