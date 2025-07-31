@@ -9,14 +9,16 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'contact', label: 'Contact' }
-  ];
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'certifications', label: 'Certifications' },
+  { id: 'blog', label: 'Blog' },
+  { id: 'testimonials', label: 'Testimonials' }, // <-- Add this line
+  { id: 'contact', label: 'Contact' }
+];
+
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
