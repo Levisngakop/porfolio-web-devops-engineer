@@ -8,6 +8,7 @@ const Contact: React.FC = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -17,15 +18,36 @@ const Contact: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsSubmitting(true);
+
+    // Create form data for Netlify
+    const formElement = e.target as HTMLFormElement;
+    const formData = new FormData(formElement);
+    
+    try {
+      // Submit to Netlify Forms
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 5000);
+      } else {
+        alert('Something went wrong. Please try again or email me directly.');
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again or email me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -46,7 +68,7 @@ const Contact: React.FC = () => {
             <div className="bg-slate-800 rounded-lg p-6">
               <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
               <p className="text-slate-300 mb-8 leading-relaxed">
-                Whether you're looking to optimize your cloud infrastructure, implement DevOps best practices, 
+                Whether you're looking to optimize your cloud infrastructure, implement DevOps best practices,
                 or need guidance on your digital transformation journey, I'm here to help.
               </p>
 
@@ -117,7 +139,7 @@ const Contact: React.FC = () => {
           {/* Contact Form */}
           <div className="bg-slate-800 rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            
+
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle size={64} className="mx-auto text-green-400 mb-4" />
@@ -127,7 +149,16 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                {/* Netlify needs this hidden input */}
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                     Your Name
@@ -178,10 +209,11 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 flex items-center justify-center"
+                  disabled={isSubmitting}
+                  className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Send size={20} className="mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
@@ -193,7 +225,7 @@ const Contact: React.FC = () => {
           <div className="bg-slate-800 rounded-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
             <p className="text-slate-300 mb-6">
-              Let's build something resilient together. From initial consultation to full implementation, 
+              Let's build something resilient together. From initial consultation to full implementation,
               I'm here to guide your infrastructure journey.
             </p>
             <button
