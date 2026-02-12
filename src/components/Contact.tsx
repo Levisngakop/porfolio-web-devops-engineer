@@ -22,12 +22,10 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Create form data for Netlify
     const formElement = e.target as HTMLFormElement;
     const formData = new FormData(formElement);
     
     try {
-      // Submit to Netlify Forms
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -52,6 +50,21 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 px-6">
+      {/* 🔴 CRITICAL: Hidden form for Netlify detection - DO NOT REMOVE */}
+      <form 
+        name="contact" 
+        method="POST" 
+        data-netlify="true" 
+        netlify-honeypot="bot-field"
+        hidden
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+      </form>
+
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -156,7 +169,6 @@ const Contact: React.FC = () => {
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
-                {/* Netlify needs this hidden input */}
                 <input type="hidden" name="form-name" value="contact" />
                 
                 <div>
@@ -220,7 +232,6 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="mt-16 text-center">
           <div className="bg-slate-800 rounded-lg p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
