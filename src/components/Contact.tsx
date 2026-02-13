@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,28 +25,25 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://formspree.io/f/xeelazrd', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      const result = await emailjs.send(
+        'service_ijs90dg',           // Your Service ID
+        'portfolio_contact',         // Your Template ID
+        {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          _replyto: formData.email,
-          _subject: `New message from ${formData.name} - DevOps Portfolio`
-        }),
-      });
+          title: 'Portfolio Contact' // For the {{title}} field in template
+        },
+        'P4hMW9etAr2Lk4a0u'         // Your Public Key
+      );
 
-      if (response.ok) {
+      if (result.status === 200) {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
         setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        alert('Something went wrong. Please email me directly at levisngakop47@gmail.com');
       }
     } catch (error) {
+      console.error('EmailJS error:', error);
       alert('Something went wrong. Please email me directly at levisngakop47@gmail.com');
     } finally {
       setIsSubmitting(false);
@@ -150,7 +149,7 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                     Your Name
