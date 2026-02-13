@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
@@ -24,18 +25,25 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // 🟢 DEBUG: Log what we're sending
+    console.log('🚀 Sending form data:', formData);
+    console.log('📧 Service ID:', 'service_ijs90dg');
+    console.log('📝 Template ID:', 'YOUR_ACTUAL_TEMPLATE_ID'); // ← CHANGE THIS!
+    console.log('🔑 Public Key:', 'P4hMW9etAr2Lk4a0u');
+
     try {
       const result = await emailjs.send(
-        'service_ijs90dg',           // Your Service ID
-        'portfolio_contact',         // Your Template ID
+        'service_ijs90dg',
+        'YOUR_ACTUAL_TEMPLATE_ID', // ← CHANGE THIS to your real Template ID!
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          title: 'Portfolio Contact' // For the {{title}} field in template
         },
-        'P4hMW9etAr2Lk4a0u'         // Your Public Key
+        'P4hMW9etAr2Lk4a0u'
       );
+
+      console.log('✅ EmailJS success:', result);
 
       if (result.status === 200) {
         setIsSubmitted(true);
@@ -43,8 +51,8 @@ const Contact: React.FC = () => {
         setTimeout(() => setIsSubmitted(false), 5000);
       }
     } catch (error) {
-      console.error('EmailJS error:', error);
-      alert('Something went wrong. Please email me directly at levisngakop47@gmail.com');
+      console.error('❌ EmailJS error:', error);
+      alert('Something went wrong. Please check the console (F12) and tell me what error you see.');
     } finally {
       setIsSubmitting(false);
     }
