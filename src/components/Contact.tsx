@@ -22,27 +22,30 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const formElement = e.target as HTMLFormElement;
-    const formData = new FormData(formElement);
-    
     try {
-      const response = await fetch('/', {
+      const response = await fetch('https://formspree.io/f/xeelazrd', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `New message from ${formData.name} - DevOps Portfolio`
+        }),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 5000);
+        setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        alert('Something went wrong. Please try again or email me directly.');
+        alert('Something went wrong. Please email me directly at levisngakop47@gmail.com');
       }
     } catch (error) {
-      alert('Something went wrong. Please try again or email me directly.');
+      alert('Something went wrong. Please email me directly at levisngakop47@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
@@ -61,9 +64,77 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Information - unchanged */}
+          {/* Contact Information */}
           <div className="space-y-8">
-            {/* ... your existing contact info JSX ... */}
+            <div className="bg-slate-800 rounded-lg p-6">
+              <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+              <p className="text-slate-300 mb-8 leading-relaxed">
+                Whether you're looking to optimize your cloud infrastructure, implement DevOps best practices,
+                or need guidance on your digital transformation journey, I'm here to help.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Email</p>
+                    <p className="text-slate-400">levisngakop47@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mr-4">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Phone</p>
+                    <p className="text-slate-400">+237674836635</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="font-semibold">Location</p>
+                    <p className="text-slate-400">Available for Remote Work</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-4">What I Can Help With</h3>
+              <ul className="space-y-2 text-blue-100">
+                <li className="flex items-center">
+                  <CheckCircle size={16} className="mr-3 text-green-300" />
+                  Cloud Architecture & Migration
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle size={16} className="mr-3 text-green-300" />
+                  CI/CD Pipeline Implementation
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle size={16} className="mr-3 text-green-300" />
+                  Kubernetes & Container Orchestration
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle size={16} className="mr-3 text-green-300" />
+                  Infrastructure as Code (IaC)
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle size={16} className="mr-3 text-green-300" />
+                  Security & Compliance Automation
+                </li>
+                <li className="flex items-center">
+                  <CheckCircle size={16} className="mr-3 text-green-300" />
+                  Monitoring & Observability
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Contact Form */}
@@ -79,15 +150,7 @@ const Contact: React.FC = () => {
                 </p>
               </div>
             ) : (
-              <form 
-                name="contact" 
-                method="POST" 
-                data-netlify="true"
-                onSubmit={handleSubmit}
-                className="space-y-6"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                     Your Name
@@ -149,9 +212,20 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Section - unchanged */}
         <div className="mt-16 text-center">
-          {/* ... your existing CTA JSX ... */}
+          <div className="bg-slate-800 rounded-lg p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+            <p className="text-slate-300 mb-6">
+              Let's build something resilient together. From initial consultation to full implementation,
+              I'm here to guide your infrastructure journey.
+            </p>
+            <button
+              onClick={() => document.getElementById('contact')?.querySelector('form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all"
+            >
+              Start the Conversation
+            </button>
+          </div>
         </div>
       </div>
     </section>
