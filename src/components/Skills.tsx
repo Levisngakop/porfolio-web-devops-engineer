@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  Cloud, 
-  Container, 
-  GitBranch, 
-  Shield, 
-  Database, 
+import {
+  Cloud,
+  Container,
+  GitBranch,
+  Shield,
+  Database,
   Monitor,
   Code,
   Server,
@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
       ]
     },
     {
-      title: 'Containerization & Orchestration',
+      title: 'Containers & Orchestration',
       skills: [
         { name: 'Docker', icon: <Container className="text-blue-500" size={32} />, level: 95 },
         { name: 'Kubernetes', icon: <Server className="text-blue-400" size={32} />, level: 90 },
@@ -82,19 +82,23 @@ const Skills: React.FC = () => {
             Skills & Technologies
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            A comprehensive toolkit for building and maintaining modern cloud infrastructure
+            A comprehensive toolkit for building and maintaining modern cloud infrastructure.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-slate-700 rounded-lg p-6">
+          {skillCategories.map((category, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-700 rounded-lg p-6 hover:scale-105 transform transition-transform duration-300"
+            >
               <h3 className="text-lg font-semibold mb-6 text-center text-slate-200">
                 {category.title}
               </h3>
+
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
+                {category.skills.map((skill, skillIdx) => (
+                  <div key={skillIdx} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         {skill.icon}
@@ -115,12 +119,12 @@ const Skills: React.FC = () => {
           ))}
         </div>
 
+        {/* Continuous Learning Section */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Always Learning</h3>
             <p className="text-lg mb-6 text-blue-100">
-              The DevOps landscape evolves rapidly. I stay current with emerging technologies 
-              and best practices through continuous learning and hands-on experimentation.
+              DevOps evolves fast. I stay current through continuous learning and hands-on experimentation.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <span className="px-4 py-2 bg-blue-700 rounded-full text-sm">
@@ -141,3 +145,4 @@ const Skills: React.FC = () => {
 };
 
 export default Skills;
+
