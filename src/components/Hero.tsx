@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown, FileText } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const scrollToAbout = () => {
@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-6">
+          <div className="flex justify-center space-x-6 mb-12">
             <a
               href="https://github.com/levisngakop"
               target="_blank"
@@ -65,16 +65,14 @@ const Hero: React.FC = () => {
             >
               <Mail size={24} />
             </a>
-          </div>
-
-          {/* Download Resume Button */}
-          <div className="mb-12">
+            {/* Resume Download */}
             <a
               href="/resume/Levis_DevOps_Engineer_Resume.pdf"
               download
-              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-blue-500/50 hover:shadow-lg hover:shadow-blue-400/60 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1"
+              aria-label="Download Resume"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
-              Download Resume
+              <FileText size={24} />
             </a>
           </div>
 
