@@ -38,6 +38,31 @@ const Hero: React.FC = () => {
             I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
           </p>
 
+          {/* Download Resume Button with Glow & Hover Animation */}
+          <div className="mb-12 flex justify-center">
+            <a
+              href="/Levis_DevOps_Engineer_Resume.pdf"
+              download
+              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-blue-500/50 hover:shadow-lg hover:shadow-blue-400/60 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 12v8m0 0l-4-4m4 4l4-4M12 4v8"
+                />
+              </svg>
+              Download Resume
+            </a>
+          </div>
+
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-12">
             <a
