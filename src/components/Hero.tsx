@@ -7,7 +7,12 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900">
+      {/* Availability Banner */}
+      <div className="absolute top-6 right-6 bg-green-500 text-white px-4 py-1 rounded-full font-medium shadow-lg animate-pulse">
+        Available for remote work — EU/UK time zones
+      </div>
+
       <div className="container mx-auto text-center">
         <div className="max-w-4xl mx-auto">
           {/* Profile Image */}
@@ -33,30 +38,13 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Description */}
-          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
             I am passionate about automation, cloud infrastructure, and helping teams scale. Over the past 5+ years,
             I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex justify-center space-x-4 mb-8">
-            <a
-              href="mailto:levisngakop47@gmail.com"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-blue-500/50 hover:shadow-lg hover:shadow-blue-400/60 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Hire Me
-            </a>
-            <a
-              href="/resume/Levis_DevOps_Engineer_Resume.pdf"
-              download
-              className="bg-slate-800 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-slate-700/50 hover:shadow-lg hover:shadow-slate-600/60 hover:bg-slate-900 transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Download Resume
-            </a>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-12">
+          {/* Social Links + Resume */}
+          <div className="flex justify-center space-x-6 mb-6">
             <a
               href="https://github.com/levisngakop"
               target="_blank"
@@ -89,6 +77,22 @@ const Hero: React.FC = () => {
               className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <FileText size={24} />
+            </a>
+          </div>
+
+          {/* Call-to-Action Buttons */}
+          <div className="flex justify-center space-x-4 mb-12">
+            <a
+              href="#contact"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-blue-500/50 hover:shadow-lg hover:shadow-blue-400/60 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              Hire Me
+            </a>
+            <a
+              href="#contact"
+              className="bg-green-500 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-green-400/50 hover:shadow-lg hover:shadow-green-300/60 hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              Contact for Work
             </a>
           </div>
 
