@@ -30,25 +30,37 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
       <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        
         {/* Brand */}
         <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           Levis Ngakop
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex items-center space-x-6">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={`transition-colors duration-200 hover:text-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400 ${
-                activeSection === item.id ? 'text-blue-400 font-semibold' : 'text-slate-300'
+                activeSection === item.id
+                  ? 'text-blue-400 font-semibold'
+                  : 'text-slate-300'
               }`}
               aria-label={`Go to ${item.label}`}
             >
               {item.label}
             </button>
           ))}
+
+          {/* Resume Button */}
+          <a
+            href="/resume/Levis_DevOps_Engineer_Resume.pdf"
+            download
+            className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold shadow hover:bg-blue-700 transition"
+          >
+            Resume
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -69,13 +81,24 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`text-left transition-colors duration-200 hover:text-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400 ${
-                    activeSection === item.id ? 'text-blue-400 font-semibold' : 'text-slate-300'
+                    activeSection === item.id
+                      ? 'text-blue-400 font-semibold'
+                      : 'text-slate-300'
                   }`}
                   aria-label={`Go to ${item.label}`}
                 >
                   {item.label}
                 </button>
               ))}
+
+              {/* Resume button for mobile */}
+              <a
+                href="/resume/Levis_DevOps_Engineer_Resume.pdf"
+                download
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold text-center"
+              >
+                Download Resume
+              </a>
             </div>
           </div>
         )}
