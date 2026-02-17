@@ -17,10 +17,10 @@ const testimonials = [
   },
   {
     id: 3,
-    imgSrc: '/images/mentee.jpg',
-    alt: 'DevOps mentee photo',
-    quote: "Before meeting Levis, DevOps felt like a jungle... His mentorship changed the way I approach tech and life.",
-    author: 'DevOps Mentee',
+    imgSrc: '/images/colleague2.jpg',
+    alt: 'colleague2 photo',
+    quote: "Levis doesn't just solve problems—he inspires others to approach challenges creatively. His leadership in automation and cloud infrastructure sets the standard for the team.",
+    author: 'Chiambem Terence Song, colleague, Senior DevOps Engineer (USA)',
   },
   {
     id: 4,
