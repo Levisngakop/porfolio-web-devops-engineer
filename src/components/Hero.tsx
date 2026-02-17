@@ -23,9 +23,14 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Title */}
-          <h2 className="text-2xl md:text-3xl text-slate-300 mb-4 font-light">
+          <h2 className="text-2xl md:text-3xl text-slate-300 mb-2 font-light">
             Cloud Native DevOps Engineer
           </h2>
+
+          {/* Availability Banner */}
+          <p className="text-green-400 font-semibold mb-4 animate-pulse">
+            🟢 Open to Remote DevOps & Cloud Opportunities (EU/UK Timezones)
+          </p>
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-blue-400 mb-6 font-medium">
@@ -49,6 +54,7 @@ const Hero: React.FC = () => {
             >
               <Github size={24} />
             </a>
+
             <a
               href="https://linkedin.com/in/levisngakop"
               target="_blank"
@@ -58,6 +64,7 @@ const Hero: React.FC = () => {
             >
               <Linkedin size={24} />
             </a>
+
             <a
               href="mailto:levisngakop47@gmail.com"
               aria-label="Email"
@@ -65,6 +72,7 @@ const Hero: React.FC = () => {
             >
               <Mail size={24} />
             </a>
+
             {/* Resume Download */}
             <a
               href="/resume/Levis_DevOps_Engineer_Resume.pdf"
