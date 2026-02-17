@@ -17,14 +17,14 @@ const testimonials = [
   },
   {
     id: 3,
-    imgSrc: '/images/colleague2.jpg',
-    alt: 'colleague2 photo',
+    imgSrc: '/colleague2.jpg',
+    alt: 'Colleague2 photo',
     quote: "Levis doesn't just solve problems—he inspires others to approach challenges creatively. His leadership in automation and cloud infrastructure sets the standard for the team.",
-    author: 'Chiambem Terence Song, colleague, Senior DevOps Engineer (USA)',
+    author: 'Chiambem Terence Song, Colleague, Senior DevOps Engineer (USA)',
   },
   {
     id: 4,
-    imgSrc: '/images/student.jpg',
+    imgSrc: '/student.jpg',
     alt: 'Former student photo',
     quote: "As my teacher and mentor, Mr. Levis ignited my love for critical thinking... He’s a rare gem.",
     author: 'Former Student, EMC Member',
