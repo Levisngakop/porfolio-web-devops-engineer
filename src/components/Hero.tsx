@@ -7,13 +7,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900">
-      
-      {/* Availability Banner */}
-      <div className="fixed top-6 right-6 z-50 bg-green-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg animate-pulse">
-        Available for Remote Work — EU/UK Timezones
-      </div>
-
+    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900">
       <div className="container mx-auto text-center">
         <div className="max-w-4xl mx-auto">
           {/* Profile Image */}
@@ -24,14 +18,19 @@ const Hero: React.FC = () => {
           />
 
           {/* Name */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-pulse">
+          <h1 className="text-5xl md:text-7xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent animate-pulse">
             Levis Ngakop
           </h1>
 
-          {/* Title */}
+          {/* Role */}
           <h2 className="text-2xl md:text-3xl text-slate-300 mb-4 font-light">
             Cloud Native DevOps Engineer
           </h2>
+
+          {/* Availability Banner */}
+          <div className="inline-block bg-green-500 text-white px-4 py-1 rounded-full font-medium mb-6 text-sm md:text-base">
+            Available for remote work (EU/UK time zones)
+          </div>
 
           {/* Tagline */}
           <p className="text-xl md:text-2xl text-blue-400 mb-6 font-medium">
@@ -39,35 +38,19 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Description */}
-          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
             I am passionate about automation, cloud infrastructure, and helping teams scale. Over the past 5+ years,
             I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
           </p>
 
-          {/* Main CTA Buttons */}
-          <div className="flex justify-center space-x-4 mb-8">
-            <a
-              href="mailto:levisngakop47@gmail.com"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
-            >
-              Hire Me
-            </a>
-            <a
-              href="/resume/Levis_DevOps_Engineer_Resume.pdf"
-              download
-              className="bg-slate-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-900 transition"
-            >
-              Download Resume
-            </a>
-          </div>
-
-          {/* Social Icons */}
+          {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-12">
             <a
               href="https://github.com/levisngakop"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+              aria-label="GitHub"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Github size={24} />
             </a>
@@ -75,20 +58,24 @@ const Hero: React.FC = () => {
               href="https://linkedin.com/in/levisngakop"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+              aria-label="LinkedIn"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:levisngakop47@gmail.com"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+              aria-label="Email"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Mail size={24} />
             </a>
+            {/* Resume Download */}
             <a
               href="/resume/Levis_DevOps_Engineer_Resume.pdf"
               download
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
+              aria-label="Download Resume"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <FileText size={24} />
             </a>
@@ -97,7 +84,8 @@ const Hero: React.FC = () => {
           {/* Scroll Down */}
           <button
             onClick={scrollToAbout}
-            className="animate-bounce text-blue-400 hover:text-blue-300"
+            aria-label="Scroll to About section"
+            className="animate-bounce mt-4 text-blue-400 hover:text-blue-300 focus:outline-none"
           >
             <ChevronDown size={32} />
           </button>
