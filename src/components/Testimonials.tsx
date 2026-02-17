@@ -3,24 +3,24 @@ import React from 'react';
 const testimonials = [
   {
     id: 1,
-    imgSrc: '/mentor.jpg', // Mentor picture in public folder
+    imgSrc: '/mentor.jpg',
     alt: 'Mentor photo',
     quote: "Levis is one of the most driven and forward-thinking engineers I’ve ever mentored... Any team would be lucky to have such a visionary DevOps leader.",
     author: 'Michael Ankinimbom, Founder, ParadigmIT Solutions LLC',
   },
   {
     id: 2,
+    imgSrc: '/colleague.jpg',
+    alt: 'Colleague photo',
+    quote: "Collaborating with Levis has been nothing short of energizing... His clarity and leadership shine.",
+    author: 'Colleague, Senior DevOps Engineer (USA)',
+  },
+  {
+    id: 3,
     imgSrc: '/images/mentee.jpg',
     alt: 'DevOps mentee photo',
     quote: "Before meeting Levis, DevOps felt like a jungle... His mentorship changed the way I approach tech and life.",
     author: 'DevOps Mentee',
-  },
-  {
-    id: 3,
-    imgSrc: '/images/colleague.jpg',
-    alt: 'Colleague photo',
-    quote: "Collaborating with Levis has been nothing short of energizing... His clarity and leadership shine.",
-    author: 'Colleague, Senior Cloud Engineer (USA)',
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ export default function Testimonials() {
       className="bg-slate-800 py-20 px-4 sm:px-6 lg:px-8 text-white"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold text-white mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           🌟 Testimonials
         </h2>
 
