@@ -6,7 +6,7 @@ const testimonials = [
     imgSrc: '/mentor.jpg',
     alt: 'Mentor photo',
     quote: "Levis is one of the most driven and forward-thinking engineers I’ve ever mentored... Any team would be lucky to have such a visionary DevOps leader.",
-    author: 'Michael Ankinimbom, Founder, ParadigmIT Solutions LLC',
+    author: 'Michael Ankinimbom, Founder, ParadigmIT Solutions LLC (USA)',
   },
   {
     id: 2,
