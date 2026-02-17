@@ -13,7 +13,7 @@ const testimonials = [
     imgSrc: '/colleague.jpg',
     alt: 'Colleague photo',
     quote: "Collaborating with Levis has been nothing short of energizing... His clarity and leadership shine.",
-    author: 'Colleague, Senior DevOps Engineer (USA)',
+    author: 'Ngong Lawrence, Colleague, Senior DevOps Engineer (USA)',
   },
   {
     id: 3,
