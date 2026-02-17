@@ -8,9 +8,10 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900">
+      
       {/* Availability Banner */}
-      <div className="absolute top-6 right-6 bg-green-500 text-white px-4 py-1 rounded-full font-medium shadow-lg animate-pulse">
-        Available for remote work — EU/UK time zones
+      <div className="fixed top-6 right-6 z-50 bg-green-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg animate-pulse">
+        Available for Remote Work — EU/UK Timezones
       </div>
 
       <div className="container mx-auto text-center">
@@ -38,19 +39,35 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Description */}
-          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
             I am passionate about automation, cloud infrastructure, and helping teams scale. Over the past 5+ years,
             I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
           </p>
 
-          {/* Social Links + Resume */}
-          <div className="flex justify-center space-x-6 mb-6">
+          {/* Main CTA Buttons */}
+          <div className="flex justify-center space-x-4 mb-8">
+            <a
+              href="mailto:levisngakop47@gmail.com"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+            >
+              Hire Me
+            </a>
+            <a
+              href="/resume/Levis_DevOps_Engineer_Resume.pdf"
+              download
+              className="bg-slate-800 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-900 transition"
+            >
+              Download Resume
+            </a>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex justify-center space-x-6 mb-12">
             <a
               href="https://github.com/levisngakop"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
             >
               <Github size={24} />
             </a>
@@ -58,49 +75,29 @@ const Hero: React.FC = () => {
               href="https://linkedin.com/in/levisngakop"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:levisngakop47@gmail.com"
-              aria-label="Email"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
             >
               <Mail size={24} />
             </a>
             <a
               href="/resume/Levis_DevOps_Engineer_Resume.pdf"
               download
-              aria-label="Download Resume"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition"
             >
               <FileText size={24} />
-            </a>
-          </div>
-
-          {/* Call-to-Action Buttons */}
-          <div className="flex justify-center space-x-4 mb-12">
-            <a
-              href="#contact"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-blue-500/50 hover:shadow-lg hover:shadow-blue-400/60 hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Hire Me
-            </a>
-            <a
-              href="#contact"
-              className="bg-green-500 text-white px-6 py-3 rounded-lg font-medium shadow-md shadow-green-400/50 hover:shadow-lg hover:shadow-green-300/60 hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1"
-            >
-              Contact for Work
             </a>
           </div>
 
           {/* Scroll Down */}
           <button
             onClick={scrollToAbout}
-            aria-label="Scroll to About section"
-            className="animate-bounce mt-4 text-blue-400 hover:text-blue-300 focus:outline-none"
+            className="animate-bounce text-blue-400 hover:text-blue-300"
           >
             <ChevronDown size={32} />
           </button>
