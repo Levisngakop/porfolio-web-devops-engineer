@@ -1,11 +1,12 @@
+import React from 'react';
+
 const testimonials = [
   {
     id: 1,
-    imgSrc: '/mentor.jpg',
+    imgSrc: '/mentor.jpg', // Mentor picture in public folder
     alt: 'Mentor photo',
     quote: "Levis is one of the most driven and forward-thinking engineers I’ve ever mentored... Any team would be lucky to have such a visionary DevOps leader.",
     author: 'Michael Ankinimbom, Founder, ParadigmIT Solutions LLC',
-    highlight: true, // flag to style this testimonial differently
   },
   {
     id: 2,
@@ -37,19 +38,15 @@ export default function Testimonials() {
       className="bg-slate-800 py-20 px-4 sm:px-6 lg:px-8 text-white"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-white mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           🌟 Testimonials
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-          {testimonials.map(({ id, imgSrc, alt, quote, author, highlight }) => (
+          {testimonials.map(({ id, imgSrc, alt, quote, author }) => (
             <div
               key={id}
-              className={`p-6 rounded-3xl shadow-xl flex flex-col md:flex-row items-start gap-6 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl ${
-                highlight
-                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 border-4 border-yellow-400 shadow-yellow-500/50'
-                  : 'bg-slate-700'
-              }`}
+              className="bg-slate-700 p-6 rounded-3xl shadow-xl flex flex-col md:flex-row items-start gap-6 transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
               <img
                 src={imgSrc}
