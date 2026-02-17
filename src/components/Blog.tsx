@@ -10,41 +10,41 @@ interface Project {
   live?: string;
 }
 
-const projects: Project[] = [
-  {
-    id: 1,
-    name: 'AWS Production VPC',
-    description:
-      'Designed and deployed a production-grade AWS VPC with public/private subnets, ALB, NAT Gateways, CloudFront, SSL via ACM, and monitoring with CloudWatch.',
-    tech: ['AWS', 'VPC', 'CloudFront', 'ALB', 'CloudWatch'],
-    github: 'https://github.com/levisdevops/aws-vpc-project'
-  },
-  {
-    id: 2,
-    name: 'Kubernetes GitOps Deployment',
-    description:
-      'Implemented GitOps CI/CD pipelines with ArgoCD for automated deployment of microservices on EKS clusters with rolling updates and health checks.',
-    tech: ['Kubernetes', 'EKS', 'ArgoCD', 'GitOps', 'CI/CD'],
-    github: 'https://github.com/levisdevops/k8s-gitops-project'
-  },
-  {
-    id: 3,
-    name: 'CI/CD Automation with Jenkins',
-    description:
-      'Automated build, test, and deployment pipelines for multiple repositories using Jenkins, Docker, and GitHub Actions.',
-    tech: ['Jenkins', 'Docker', 'GitHub Actions', 'CI/CD', 'Automation'],
-    github: 'https://github.com/levisdevops/jenkins-ci-cd'
-  }
-];
+const Blog: React.FC = () => {
+  const projects: Project[] = [
+    {
+      id: 1,
+      name: 'AWS Production VPC',
+      description:
+        'Designed and deployed a production-grade AWS VPC with public/private subnets, ALB, NAT Gateways, CloudFront, SSL via ACM, and monitoring with CloudWatch.',
+      tech: ['AWS', 'VPC', 'CloudFront', 'ALB', 'CloudWatch'],
+      github: 'https://github.com/levisdevops/aws-vpc-project'
+    },
+    {
+      id: 2,
+      name: 'Kubernetes GitOps Deployment',
+      description:
+        'Implemented GitOps CI/CD pipelines with ArgoCD for automated deployment of microservices on EKS clusters with rolling updates and health checks.',
+      tech: ['Kubernetes', 'EKS', 'ArgoCD', 'GitOps', 'CI/CD'],
+      github: 'https://github.com/levisdevops/k8s-gitops-project'
+    },
+    {
+      id: 3,
+      name: 'CI/CD Automation with Jenkins',
+      description:
+        'Automated build, test, and deployment pipelines for multiple repositories using Jenkins, Docker, and GitHub Actions.',
+      tech: ['Jenkins', 'Docker', 'GitHub Actions', 'CI/CD', 'Automation'],
+      github: 'https://github.com/levisdevops/jenkins-ci-cd'
+    }
+  ];
 
-const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-20 px-6 bg-slate-900">
+    <section id="blog" className="py-20 px-6 bg-slate-900">
       <div className="container mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Projects
+            Blog / Projects
           </h2>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             A showcase of my DevOps work — from cloud infrastructure to CI/CD pipelines.
@@ -104,5 +104,5 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
+export default Blog;
 
