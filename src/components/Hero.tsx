@@ -9,11 +9,11 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900"
+      className="min-h-screen flex flex-col items-center justify-center pt-20 px-6 pb-32 bg-slate-900"
     >
       <div className="container mx-auto text-center">
         {/* Card Wrapper */}
-        <div className="bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-500/20 max-w-4xl mx-auto">
+        <div className="bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-500/20 max-w-4xl mx-auto my-6">
           {/* Profile Image */}
           <img
             src="/profile.jpg"
