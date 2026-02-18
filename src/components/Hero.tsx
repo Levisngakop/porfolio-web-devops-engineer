@@ -7,9 +7,13 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-20 px-6 bg-slate-900"
+    >
       <div className="container mx-auto text-center">
-        <div className="max-w-4xl mx-auto">
+        {/* Card Wrapper */}
+        <div className="bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-500/20 max-w-4xl mx-auto">
           {/* Profile Image */}
           <img
             src="/profile.jpg"
@@ -23,12 +27,12 @@ const Hero: React.FC = () => {
           </h1>
 
           {/* Role */}
-          <h2 className="text-2xl md:text-3xl text-slate-300 mb-4 font-light">
+          <h2 className="text-2xl md:text-3xl text-slate-200 mb-4 font-light">
             Cloud Native DevOps Engineer
           </h2>
 
-          {/* Availability Badge (restore original position) */}
-          <div className="inline-block bg-green-500 text-white px-4 py-1 rounded-full font-medium mb-6 text-sm md:text-base">
+          {/* Availability Badge */}
+          <div className="inline-block bg-green-500 text-white px-4 py-1 rounded-full font-medium mb-6 text-sm md:text-base shadow-md">
             Available for remote work (EU/UK time zones)
           </div>
 
@@ -38,19 +42,19 @@ const Hero: React.FC = () => {
           </p>
 
           {/* Description */}
-          <p className="text-lg text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
             I am passionate about automation, cloud infrastructure, and helping teams scale. Over the past 5+ years,
             I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
           </p>
 
-          {/* Social Links (restore original layout) */}
+          {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-12">
             <a
               href="https://github.com/levisngakop"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-700 hover:bg-slate-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Github size={24} />
             </a>
@@ -59,14 +63,14 @@ const Hero: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-700 hover:bg-slate-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:levisngakop47@gmail.com"
               aria-label="Email"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-700 hover:bg-slate-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <Mail size={24} />
             </a>
@@ -74,7 +78,7 @@ const Hero: React.FC = () => {
               href="/resume/Levis_DevOps_Engineer_Resume.pdf"
               download
               aria-label="Download Resume"
-              className="p-3 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="p-3 rounded-full bg-slate-700 hover:bg-slate-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               <FileText size={24} />
             </a>
