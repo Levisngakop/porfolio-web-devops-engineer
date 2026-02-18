@@ -1,23 +1,23 @@
 import React from 'react';
-import { Cpu, TrendingUp, Users } from 'lucide-react';
+import { Lightbulb, Target, Users } from 'lucide-react';
 
 const About: React.FC = () => {
   const journey = [
     {
       title: "The Beginning",
-      icon: <Cpu className="w-10 h-10 text-blue-400 mb-3" />,
+      icon: <Lightbulb className="w-12 h-12 text-yellow-400 mb-3" />,
       description:
         "My journey started with a curiosity about how systems work at scale. From my first encounter with Linux servers to deploying my first application, I knew I wanted to be part of the infrastructure that powers the digital world.",
     },
     {
       title: "The Growth",
-      icon: <TrendingUp className="w-10 h-10 text-blue-400 mb-3" />,
+      icon: <Target className="w-12 h-12 text-green-400 mb-3" />,
       description:
         "Over 5+ years, I’ve evolved from managing single servers to orchestrating complex Kubernetes clusters, designing production-grade AWS VPCs, and building CI/CD pipelines that deploy thousands of times per day.",
     },
     {
       title: "The Impact",
-      icon: <Users className="w-10 h-10 text-blue-400 mb-3" />,
+      icon: <Users className="w-12 h-12 text-blue-400 mb-3" />,
       description:
         "Today, I focus on empowering teams through automation, building resilient infrastructure, and sharing knowledge.",
     },
@@ -28,14 +28,17 @@ const About: React.FC = () => {
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold mb-12 text-center text-blue-400">About Me</h2>
 
-        <p className="text-lg mb-12 leading-relaxed text-center">
-          I am a Cloud Native DevOps Engineer with over 5 years of experience building scalable, resilient, and
-          automated cloud infrastructure. I specialize in AWS, Kubernetes, GitOps, CI/CD, and helping teams achieve
-          operational excellence. I enjoy mentoring, collaborating with global teams, and continuously learning
-          to stay ahead in the fast-evolving DevOps landscape.
-        </p>
+        {/* About Me Card */}
+        <div className="bg-slate-700 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-500/20 mb-12 text-center">
+          <p className="text-lg leading-relaxed">
+            I am a Cloud Native DevOps Engineer with over 5 years of experience building scalable, resilient, and
+            automated cloud infrastructure. I specialize in AWS, Kubernetes, GitOps, CI/CD, and helping teams achieve
+            operational excellence. I enjoy mentoring, collaborating with global teams, and continuously learning
+            to stay ahead in the fast-evolving DevOps landscape.
+          </p>
+        </div>
 
-        {/* Journey Cards */}
+        {/* Career Journey Cards */}
         <div className="space-y-6">
           {journey.map((step) => (
             <div
