@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, TrendingUp, Users } from 'lucide-react'; // Icons for each section
+import { Cpu, TrendingUp, Users } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -14,14 +14,14 @@ const About: React.FC = () => {
           to stay ahead in the fast-evolving DevOps landscape.
         </p>
 
-        {/* Career Journey Section */}
-        <div className="space-y-10">
+        {/* Career Journey Section — Distinct Background */}
+        <div className="bg-slate-700 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-500/20 space-y-10">
           {/* The Beginning */}
           <div className="flex items-start space-x-4">
-            <Cpu className="w-8 h-8 text-blue-400 mt-1" />
+            <Cpu className="w-10 h-10 text-blue-400 mt-1" />
             <div>
               <h4 className="text-2xl font-semibold text-blue-300 mb-2">The Beginning</h4>
-              <p className="text-lg text-slate-200">
+              <p className="text-slate-200">
                 My journey started with a curiosity about how systems work at scale. From my first encounter with Linux
                 servers to deploying my first application, I knew I wanted to be part of the infrastructure that powers
                 the digital world.
@@ -31,10 +31,10 @@ const About: React.FC = () => {
 
           {/* The Growth */}
           <div className="flex items-start space-x-4">
-            <TrendingUp className="w-8 h-8 text-blue-400 mt-1" />
+            <TrendingUp className="w-10 h-10 text-blue-400 mt-1" />
             <div>
               <h4 className="text-2xl font-semibold text-blue-300 mb-2">The Growth</h4>
-              <p className="text-lg text-slate-200">
+              <p className="text-slate-200">
                 Over 5+ years, I’ve evolved from managing single servers to orchestrating complex Kubernetes clusters,
                 designing production-grade AWS VPCs, and building CI/CD pipelines that deploy thousands of times per day.
               </p>
@@ -43,10 +43,10 @@ const About: React.FC = () => {
 
           {/* The Impact */}
           <div className="flex items-start space-x-4">
-            <Users className="w-8 h-8 text-blue-400 mt-1" />
+            <Users className="w-10 h-10 text-blue-400 mt-1" />
             <div>
               <h4 className="text-2xl font-semibold text-blue-300 mb-2">The Impact</h4>
-              <p className="text-lg text-slate-200">
+              <p className="text-slate-200">
                 Today, I focus on empowering teams through automation, building resilient infrastructure, and sharing
                 knowledge.
               </p>
