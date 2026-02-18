@@ -11,14 +11,6 @@ const About: React.FC = () => {
           operational excellence.
         </p>
 
-        <p className="text-lg mb-6 leading-relaxed text-center">
-          My passion is not only building systems but also enabling people to work efficiently with modern
-          cloud-native technologies. I enjoy mentoring, collaborating with global teams, and continuously learning
-          to stay ahead in the fast-evolving DevOps landscape.  
-          <br /><br />
-          🎯 <strong>Currently Exploring:</strong> MLOps & AIOps | 🧠 <strong>Deepening Knowledge In:</strong> Platform Engineering | ⚡ <strong>Researching:</strong> LLMOps
-        </p>
-
         {/* CTA Button */}
         <div className="text-center mt-8">
           <a
