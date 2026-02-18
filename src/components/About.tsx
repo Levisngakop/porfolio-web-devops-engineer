@@ -36,6 +36,10 @@ const About: React.FC = () => {
           </h3>
           <p className="text-slate-300 text-base leading-relaxed">
             Today, I focus on empowering teams through automation, building resilient infrastructure, and sharing knowledge.
+            I actively mentor junior engineers, introduce best practices for cloud-native operations, and help organizations
+            streamline deployments, monitoring, and incident management processes. My work ensures teams can scale efficiently,
+            maintain security and reliability, and deliver business value faster. By fostering collaboration and automation,
+            I strive to make cloud-native systems not only robust but also approachable for teams at every level.
           </p>
         </div>
       </div>
