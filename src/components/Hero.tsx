@@ -9,11 +9,10 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center pt-20 px-6 pb-32 bg-slate-900"
+      className="min-h-screen flex flex-col items-center justify-center pt-20 px-6 pb-20 bg-slate-900"
     >
       <div className="container mx-auto text-center">
-        {/* Card Wrapper */}
-        <div className="bg-slate-800 rounded-2xl p-8 md:p-12 shadow-lg shadow-blue-500/20 max-w-4xl mx-auto my-6">
+        <div className="max-w-4xl mx-auto">
           {/* Profile Image */}
           <img
             src="/profile.jpg"
@@ -41,11 +40,13 @@ const Hero: React.FC = () => {
             Empowering Systems. Enabling People.
           </p>
 
-          {/* Description */}
-          <p className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-            I am passionate about automation, cloud infrastructure, and helping teams scale. Over the past 5+ years,
-            I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
-          </p>
+          {/* Description Card */}
+          <div className="bg-slate-800 rounded-2xl p-6 md:p-8 shadow-lg shadow-blue-500/20 max-w-3xl mx-auto my-6">
+            <p className="text-lg text-slate-400 leading-relaxed">
+              I am passionate about automation, cloud infrastructure, and helping teams scale. Over the past 5+ years,
+              I’ve built resilient, production-grade cloud-native solutions with AWS, Kubernetes, and CI/CD pipelines.
+            </p>
+          </div>
 
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-12">
