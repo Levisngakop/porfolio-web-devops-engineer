@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+ import React, { useRef, useState } from 'react';
 import { Mail, Phone, MapPin, CheckCircle, Send } from 'lucide-react';
 import ContactCard from './ContactCard'; // Make sure this exists
 import InputField from './InputField';   // Make sure this exists
@@ -13,16 +13,33 @@ const Contact: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate sending
-    setTimeout(() => {
+    try {
+      const res = await fetch("http://localhost:5000/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+    }
   };
 
   return (
