@@ -3,7 +3,7 @@ import { Clock, Target, CheckCircle } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 px-6 bg-slate-800 text-slate-200">
+    <section id="about" className="pt-20 pb-12 px-6 bg-slate-800 text-slate-200">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold mb-12 text-center text-blue-400">About Me</h2>
 
@@ -30,7 +30,7 @@ const About: React.FC = () => {
         </div>
 
         {/* The Impact */}
-        <div className="bg-slate-700 rounded-2xl p-6 md:p-8 shadow-lg shadow-blue-500/20 mb-6">
+        <div className="bg-slate-700 rounded-2xl p-6 md:p-8 shadow-lg shadow-blue-500/20">
           <h3 className="text-white text-xl md:text-2xl font-semibold mb-2 flex items-center">
             <CheckCircle className="w-5 h-5 mr-3 text-purple-400" /> The Impact
           </h3>
