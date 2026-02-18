@@ -5,10 +5,12 @@ const About: React.FC = () => {
     <section id="about" className="py-20 px-6 bg-slate-800 text-slate-200">
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl font-bold mb-6 text-center text-blue-400">About Me</h2>
+        
         <p className="text-lg mb-6 leading-relaxed text-center">
           I am a Cloud Native DevOps Engineer with over 5 years of experience building scalable, resilient, and
           automated cloud infrastructure. I specialize in AWS, Kubernetes, GitOps, CI/CD, and helping teams achieve
-          operational excellence.
+          operational excellence. I enjoy mentoring, collaborating with global teams, and continuously learning
+          to stay ahead in the fast-evolving DevOps landscape.
         </p>
 
         {/* CTA Button */}
