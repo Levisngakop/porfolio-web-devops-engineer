@@ -13,6 +13,33 @@ const About: React.FC = () => {
           to stay ahead in the fast-evolving DevOps landscape.
         </p>
 
+        {/* Career Journey Section */}
+        <div className="mt-10 space-y-6">
+          <div>
+            <h4 className="text-2xl font-semibold text-blue-300 mb-2">The Beginning</h4>
+            <p className="text-lg text-slate-200">
+              My journey started with a curiosity about how systems work at scale. From my first encounter with Linux
+              servers to deploying my first application, I knew I wanted to be part of the infrastructure that powers
+              the digital world.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-semibold text-blue-300 mb-2">The Growth</h4>
+            <p className="text-lg text-slate-200">
+              Over 5+ years, I’ve evolved from managing single servers to orchestrating complex Kubernetes clusters,
+              designing production-grade AWS VPCs, and building CI/CD pipelines that deploy thousands of times per day.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-2xl font-semibold text-blue-300 mb-2">The Impact</h4>
+            <p className="text-lg text-slate-200">
+              Today, I focus on empowering teams through automation, building resilient infrastructure, and sharing knowledge.
+            </p>
+          </div>
+        </div>
+
         {/* CTA Button */}
         <div className="text-center mt-8">
           <a
