@@ -24,10 +24,10 @@ const testimonials = [
   },
   {
     id: 4,
-    imgSrc: '/student.jpg',
-    alt: 'Former student photo',
-    quote: "As my teacher and mentor, Mr. Levis ignited my love for critical thinking... He’s a rare gem.",
-    author: 'Former Student, EMC Member',
+    imgSrc: '/Mentee.jpg',
+    alt: 'Mentee photo',
+    quote: "Mr. Levis brings positive energy and inspires excellence. He ignited my passion for growth and leadership. Truly a goal-getter.",
+    author: 'Dulandzev Melvis Berinyuy, Student Leader, CEO Youth Impact Group, UB, (Cameroon)',
   },
 ];
 
