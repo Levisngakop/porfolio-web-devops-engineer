@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Target, CheckCircle } from 'lucide-react';
+import { Clock } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -15,9 +15,10 @@ const About: React.FC = () => {
           </h3>
 
           <p className="text-slate-300 text-lg leading-relaxed mb-4">
-            I design, automate, and maintain scalable cloud-native infrastructure on AWS and Kubernetes.
-            With over 5 years of experience, I’ve built production-grade environments, CI/CD pipelines,
-            and systems that improve deployment speed, reliability, and operational efficiency.
+            I am currently a DevOps Engineer Consultant at <strong>ParadigmIT Solutions LLC</strong>, 
+            where I design and automate cloud-native infrastructure, CI/CD pipelines, and production-grade AWS environments 
+            for enterprise clients. With over 5 years of experience, I’ve helped teams scale, improve reliability, 
+            and streamline deployments.
           </p>
 
           <p className="text-slate-300 text-lg leading-relaxed mb-4">
